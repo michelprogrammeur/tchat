@@ -1,8 +1,3 @@
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
 @font-face{ 
 	font-family: 'GreyScale';
 	src: url('../fonts/webfonts/greyscalebasic_bold_macroman/Greyscale_Basic_Bold-webfont.eot');
@@ -12,25 +7,71 @@
 	     url('../fonts/webfonts/greyscalebasic_bold_macroman/Greyscale_Basic_Bold-webfont.svg#webfont') format('svg');
 }
 
-
+/* ======= GLOBAL.CSS ======= */
 body {
 	padding: 0;
 	position: relative;
 	height: 969px;
 }
 .form-control {
-	padding: 26px 22px;
+	padding: 15px 15px;
 	font-size: 20px;
 }
+#btnIns a, #btnBack a{
+	text-decoration: none;
+	color: #ffffff;
+}
+.errorMessage {
+	background-color: #FF3E3E;
+	box-shadow: 0px 3px 4px #484848;
+    padding: 12px 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+.errorMessage i{
+	font-size: 25px;
+	display: inline-block;
+	color: #ffffff;
+	margin-top: 2px;
+}
+.errorMessage span {
+	color: #ffffff;
+	font-size: 20px;
+	margin-left: 10px;
+}
+.title {
+	font-family: "Trebuchet MS", verdana, arial, sans-serif;
+	color: #FFFBFB;
+	font-size: 50px;
+	font-weight: bold;
+	padding: 10px 0;
+}
+#speudo, #speudo2 {
+	margin-top: 20px;
+}
+.info {
+	width: 100%;
+	text-align: center;
+}
+.info p{
+	display: block;
+	width: 81%;
+	font-size: 26px;
+	color: #f0f0f0;
+	font-family: 'GreyScale',verdana,arial,sans-serif;
+}
+.info h1{
+	padding: 200px 0 0px 0;
+	text-align: center;
+	display: block;
+	width: 100%;
+}
+.info h1 img{
+	width: 32%;
+}
+/* ======= INDEXS.CSS ======= */
 #login {
 	background-color: #16a085;
-	width: 100%;
-	height: 960px;
-	clear: both;
-}
-
-#signin {
-	background-color: #2c3e50;
 	width: 100%;
 	height: 960px;
 	clear: both;
@@ -39,23 +80,14 @@ body {
 	width: 50%;
 	margin: 0 auto;
 }
-
-
-.title {
-	font-family: "Trebuchet MS", verdana, arial, sans-serif;
-	color: #FFFBFB;
-	font-size: 50px;
-	font-weight: bold;
-	padding: 10px 0;
-}
-#inscript {
+#btnIns {
+	padding: 15px 20px;
+	background-color: #1abc9c;
+	display: inline-block;
 	padding: 15px 30px;
-	margin-top: 10px;
-	background-color: #F1D35A !important;
-	color: #ffffff;
-	font-family: "Open sans", verdana, arial, sans-serif;
 	font-size: 20px;
-	border: none;
+	vertical-align: top;
+	margin: 10px 0 0 10px;
 }
 #connex{
 	padding: 15px 30px;
@@ -66,33 +98,44 @@ body {
 	font-size: 20px;
 	border: none;
 }
-#info {
-	margin: 0 auto;
+
+
+/* ======= INSCRIPTION.CSS ======= */
+#signin {
+	background-color: #2c3e50;
+	width: 100%;
+	height: 960px;
+	clear: both;
+}
+#inscript {
+	padding: 15px 30px;
+	margin-top: 10px;
+	background-color: #F1D35A !important;
+	color: #ffffff;
+	font-family: "Open sans", verdana, arial, sans-serif;
+	font-size: 20px;
+	border: none;
+}
+#btnBack {
+	padding: 15px 20px;
 	background-color: #34495e;
-	padding: 20px;
-	color: #D8DBF3;
-	width: 50%;
+	display: inline-block;
+	padding: 15px 30px;
+	font-size: 20px;
+	vertical-align: top;
+	margin: 10px 0 0 10px;
 }
 
-#info2 {
-	margin: 0 auto;
-	background-color: #1abc9c;
-	padding: 20px;
-	color: #D8DBF3;
-	width: 50%;
-}
 
-.presentation {
-	color: #B3F5E8;
-}
-
-/* tchat.html */
+/* ======== TCHAT.CSS ======== */
+/* header page */
 #header-wrapper {
 	background-color: #ffac0c;
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	position: relative;
+	position: fixed;
+	z-index: 9999;
 	height: 72px;
 }
 #header-wrapper > h1{
@@ -101,7 +144,10 @@ body {
 	display: block;
 	width: 20%;
 	margin: 0;
-	height: 72px;
+	height: 71px;
+}
+#logo > img{
+	width: 28%;
 }
 #deconnexion {
 	font-size: 30px;
@@ -114,7 +160,6 @@ body {
 	right: 0;
 	top: 0;
 }
-
 .hvr-sweep-to-top {
 	display: inline-block;
 	vertical-align: middle;
@@ -130,7 +175,6 @@ body {
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
-
 .hvr-sweep-to-top:before {
   content: "";
   position: absolute;
@@ -158,8 +202,7 @@ body {
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
 }
-
-
+/* liste des utilisateurs */
 #user {
 	background-color: #38424b;
 	border-right: 1px solid #EDEDED;
@@ -169,20 +212,52 @@ body {
 	margin: 0;
 	display: inline-block;
 	overflow: hidden;
+	position: relative;
+	top: 72px;
 }
-
-
 #user h2{
 	text-align: center;
 	color: #ffffff;
 	padding: 32px;
 	margin: 0;
 	width: 100%;
-	font-size: 30px;
+	font-size: 26px;
 	font-family: 'GreyScale', verdana,arial,sans-serif;
 	font-weight: bold;
 }
-
+#people {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+#people > li {
+	position: relative;
+	display: block;
+	vertical-align: top;
+	padding: 8px 18px;
+	margin: 0;
+	list-style-type: none; 
+	background-color: #46535c;
+	border-bottom: 1px solid #556570;
+	font-size: 19px;
+	color: #A3AEBD;
+	font-family: 'Trebuchet MS', verdana,arial,sans-serif;
+}
+#people li > p {
+	vertical-align: top;
+	display: inline-block;
+	margin: 6px 0 0 0;
+}
+.clr {
+	background: url('../img/users.png') no-repeat 50% 100%;
+	background-size: 85%;
+	display: inline-block;
+	margin-right: 20px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+}
+/* zone des messages + input message */
 #main-wrapper {
 	width: 80%;
 	display: inline-block;
@@ -190,58 +265,21 @@ body {
 	margin: 0;
 	padding: 0;
 }
-#content {
-	position: absolute;
-	bottom: 0;
-	width: 80%;
-	border-top: 3px solid #f0f0f0;
-}
-
 #message {
 	padding: 30px;
 	font-size: 22px;
 	width: 100%;
-	background-color: #f9f9f9;
+	background-color: #f2f2f2;
 	border: none;
-	color: #ffffff;
+	color: #616161;
 }
-
 .clear {
 	clear: both;
 }
-#people {
-	margin: 0;
-	padding: 0;
-	display: block;
+.users {
+	padding: 0 10px;
+	font-size: 20px;
 }
-
-#people > li {
-	display: block;
-	vertical-align: top;
-	padding: 15px 20px;
-	margin: 0;
-	list-style-type: none; 
-	background-color: #46535c;
-	border-bottom: 1px solid #556570;
-	font-size: 22px;
-	color: #A3AEBD;
-	font-family: 'Trebuchet MS', verdana,arial,sans-serif;
-}
-
-.clr {
-	display: inline-block;
-	margin-right: 20px;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-}
-
-#people li > p {
-	vertical-align: top;
-	display: inline-block;
-	margin: 11px 0 0 0;
-}
-
 #send {
 	padding: 27px 30px;
 	color: #616161;
@@ -254,27 +292,144 @@ body {
 	right: 0;
 	border: none;
 }
-
+#send:hover {
+	color: #ffffff;
+	background-color: #E03939;
+}
 #messageSend {
 	background-color: #fdfdfd;
 	height: 806px;
 	width: 100%;
 	padding: 40px;
 	overflow: scroll;
+	top: 72px;
 	overflow-x: hidden;
+	position: relative;
 }
-
+#content {
+	position: fixed;
+	bottom: 0;
+	width: 80%;
+	border-top: 3px solid #eeeeee;
+}
+.container {
+	width: 100%;
+	margin:  0 0 10px 0 !important;
+	display: block;
+	padding: 0;
+	position: relative;
+	clear: both;
+	word-break: break-all;
+}
+.colorMy {
+	width: 45%;
+	margin:  0 0 10px 0 !important;
+	display: block;
+	padding: 0;
+	border-bottom: 2px solid #FFFDF8;
+	background-color: #fbfbfb;
+	float: right;
+	right: 0;
+	padding: 10px;
+}
+.colorContent {
+	width: 45%;
+	margin:  0 0 10px 0 !important;
+	display: block;
+	padding: 0;
+	border-bottom: 2px solid #FFFDF8;
+	float: left;
+	right: 0;
+	padding: 10px;
+	background-color: #fbfbfb;
+}
 .title2 {
 	background-color: #2d3546;
 	font-size: 24px;
 	padding: 10px 15px;
 	display: block;
-	width: 22%;
+	margin: 0 0 10px 0;
+	width: 40%;
 	color: #ffffff;
 	overflow: hidden;
 	border-radius: 3px;
 }
-.users {
-	padding: 0 10px;
+.title3 {
+	background-color: #FEB324;
+	font-size: 24px;
+	padding: 10px 15px;
+	display: block;
+	margin: 0 0 10px 0;
+	width: 40%;
+	color: #ffffff;
+	overflow: hidden;
+	border-radius: 3px;
+}
+/* Vous êtes connecté */
+.online {
+	color: #45FF5F;
 	font-size: 20px;
+	font-weight: normal;
+	font-family: 'Trebuchet MS', verdana, arial, sans-serif;
+	padding: 15px;
+	position: absolute;
+	right: 21px;
+	top: 72px;
+	background: url('../img/lueur.png') #2d3546 no-repeat 90% 50%;
+	background-size: 5%;
+	width: 240px;
+	z-index: 300;
+}
+/* palette couleurs */
+li > i {
+	padding: 20px;
+	display: inline;
+	vertical-align: top;
+	top: 0px;
+	right: 0;
+	position: absolute;
+	color: #ffffff;
+}
+#color {
+	background-color: #ffffff;
+	width: 260px;
+	height: 219px;
+	position: fixed;
+	top: 82px;
+	right: 276px;
+	z-index: 99999;
+	box-shadow: 0px 3px 4px #B9B9B9;
+	padding: 10px;
+	display: block;
+}
+#color h2{
+	font-size: 18px;
+	color: #e0e0e0;
+	margin: 0;
+	padding: 10px 0;
+	display: block;
+}
+.pen {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+}
+#chooseColor {
+	position: absolute;
+	width: 72px;
+	height: 72px;
+	top: 0;
+	right: 136px;
+	background-color: #ffac0c;
+	border: none;
+	border-left: 2px solid #FFBF43;
+	color: #ffffff;
+	font-size: 30px;
+	text-align: center;
+}
+#chooseColor:hover {
+	background-color: #e49702;
 }

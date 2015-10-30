@@ -10,7 +10,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -22,7 +23,8 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <header id="header-wrapper">
-            <h1 id="logo">logo</h1>
+            <h1 id="logo"><img src="img/logo.png"></h1>
+            <button id="chooseColor"><i class="fa fa-paint-brush"></i></button>
             <button id="deconnexion" class="hvr-sweep-to-top">Log out</button>
         </header>
 
@@ -33,14 +35,18 @@
             </div>
             <div class="clear"></div>
         </aside><main id="main-wrapper">
+            <p class="online">Vous êtes connecté</p>
             <div id="connect"></div>
+            <div id="color">
+                <h2>Choose your color:</h2>
+            </div>
             <div id="messageSend">
-                
             </div>
-            <div id="content">
-                <input id="message" type="text"></input>
-                <button id="send">SEND</button>
-            </div>
+
+            <form id="content">
+                <input id="message" type="text" placeholder="Your message..."></input>
+                <button type="submit" id="send">SEND</button>
+            </form>
             
             <div class="clear"></div>
         </main>
@@ -61,6 +67,19 @@
         <script>app.userLogged()</script>
         <script>app.sendMessage()</script>
         <script>app.getTalk()</script>
+        <script>app.createColor()</script>
+        <script>app.chooseColor()</script>
+        <script>app.getColor()</script>
+
+        <script>
+            setInterval(function() {
+                app.getTalk();
+            }, 2500);
+
+            setInterval(function() {
+                app.userLogged();
+            }, 10000);
+        </script>
             
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
